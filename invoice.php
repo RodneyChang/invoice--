@@ -9,9 +9,10 @@ $period = $_POST['period'];
 $expend = $_POST['expend'];
 $year = $_POST['year'];
 
-$sql = "insert into `myinvoice`(`ennum`, `number`, `period`,`expend`, `year`) VALUES ('$ennum', '$number', '$period', '$expend', '$year')";
+$sql = "insert into `myinvoice`(`ennum`, `number`, `period`,`expend`, `year`) 
+VALUES ('$ennum', '$number', '$period', '$expend', '$year')";
 $pdo->exec($sql);
 header("location:index.html");
-echo $sql ;
+
 
 ?>
