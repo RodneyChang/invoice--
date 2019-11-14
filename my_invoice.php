@@ -10,14 +10,33 @@
     <?php 
         include_once("base.php"); 
     ?>
-  
 
     <table>
         <tr>
-            <td>發票存摺</td>
+            <td>我的發票</td>
             <td></td>
         </tr>
-        <tr>
+        <?php
+            if(!empty($_GET['period'])){
+                $row = selectF1("myinvoice",$_GET['period']);
+                foreach($row as $invoice){
+                ?> 
+                <tr>
+                    <td><?=$invoice['ennum']?>-<?=$invoice['num']?></td>
+                    <td><?=$invoice['expend']?></td>
+                </tr>
+
+                    <?php
+                }
+            }     
+        ?>
+
+
+    </table>
+
+
+
+        <!-- <tr>
             <td>1,2月</td>
             <td></td>
         </tr>
@@ -40,13 +59,11 @@
         <tr>
             <td>11,12月</td>
             <td></td>
-        </tr>
+        </tr> -->
         <tr>
                 <td>
                     <a href="index.html">回首頁</a>
                 </td>
-            <td>
-            </td>
         </tr>
     </table>
 

@@ -12,7 +12,11 @@ $year = $_POST['year'];
 $sql = "insert into `myinvoice`(`ennum`, `number`, `period`,`expend`, `year`) 
 VALUES ('$ennum', '$number', '$period', '$expend', '$year')";
 $pdo->exec($sql);
+insert("myinvoice",$data);
 header("location:index.html");
+
+
+
 
 
 ?>
